@@ -1,0 +1,66 @@
+
+<div class="contactAddress" [hidden]="submitted">
+    <section class="jumbotron text-center">
+        <div class="container">
+            <div class="title">
+                <h1 style='margin-top: 10px;' class="jumbotron-heading">Contact Us</h1>
+            </div>
+            <p class="lead text-muted mb-0">We will get in touch with you ASAP!</p>
+        </div>
+    </section>
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <div class="card">
+                    <div class="card-header bg-dark text-white"><i class="fa fa-envelope"></i> Contact Us
+                    </div>
+                    <div class="card-body">
+                        <form #contactForm="ngForm" (ngSubmit)="submit(contactForm.value)">
+                            <div class="form-group">
+                                <label for="name">Name</label>
+                                <input type="text" class="form-control" ngModel name="name" id="name" aria-describedby="emailHelp" placeholder="Enter name" required>
+                            </div>
+                            <div style='margin-top: 10px;' class="form-group">
+                                <label for="email">Email address</label>
+                                <input type="email" class="form-control" ngModel name="email" id="email" aria-describedby="emailHelp" placeholder="Enter email" required>
+                                <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+                            </div>
+                            <div style='margin-top: 10px;'class="form-group">
+                                <label for="message">Message</label>
+                                <textarea class="form-control" ngModel name="message" id="message" rows="6" placeholder="Enter message"required></textarea>
+                            </div>
+                            <div class="mx-auto">
+                            <button style='margin-top: 10px;'type="submit" class="btn btn-dark text-right">Submit</button></div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 col-sm-4">
+                <div class="card bg-light mb-3">
+                    <div class="card-header bg-dark text-white"><i class="fa fa-home"></i> Address</div>
+                    <div class="card-body address">
+                        <p>1234 Global Street, Charlotte NC</p>
+                        <p>Email: slomochacko0@gmail.com</p>
+                        <p>Phone: 704-232-5391</p>
+                    </div>
+    
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="thankyou1" [hidden]="!submitted">
+    <div class="thankyou">
+      <div class="jumbotron text-center">
+        <h1 style='margin-top: 10px;' class="display-3 thank">Thank You {{contact.name}}, for submitting your message.</h1>
+        <p class="lead">Please check your email at {{contact.email}} you shall receive a response within 24 hours.</p>
+        <hr>
+        <p style='margin-top: 20px;'>Having trouble? <a routerLink="/contactus">Contact us</a></p>
+        <p class="lead">
+          <a routerLink="" class="btn btn-lg btn-dark" role="button">Continue to homepage</a>
+        </p>
+      </div>
+    </div>
+</div>
+    

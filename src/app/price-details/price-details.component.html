@@ -1,0 +1,17 @@
+
+<div class="d-flex align-items-center justify-content-between mt-1">
+    <ng-container *ngIf="product.price<9.99 then template1 else template2"></ng-container>
+        <ng-template #template1>
+            <div class="price-wrapper">
+                <div class="price-slash"></div>
+                <div class="price">List Price: $9.99</div>
+                <div class="price">Top Deal: {{product?.price | currency}}</div>
+            </div>                                    
+        </ng-template>
+    
+        <ng-template #template2>
+            <div class="price1">
+                <h6 style='font-size: 19px;' class="font-weight-bold my-2">Top Deal: {{product?.price | currency }}</h6>
+            </div>
+        </ng-template>
+</div>

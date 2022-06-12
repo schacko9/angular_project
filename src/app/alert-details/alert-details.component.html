@@ -1,0 +1,14 @@
+
+<ng-container *ngIf="product.quantity>0 then template1 else template2"></ng-container>
+
+    <ng-template #template1>
+        <button class ="btn btn-dark" [disabled]=notVisible (click)="clickChildMe()">Check Avalibility</button>
+    </ng-template>
+
+    <ng-template #template2>
+        <div class="discount">
+            <p class="text">Product is not avalible</p>
+            <p class="text2">Please check back in a few days.</p>
+        </div>
+        <button class ="btn btn-dark" [disabled]=notVisible (click)="nclickChildMe()">Check Avalibility</button>
+    </ng-template>

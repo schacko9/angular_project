@@ -1,0 +1,42 @@
+.myContainer {
+  background-color: white;
+  margin-bottom: 100px;
+}
+
+.container {
+    background-color: white;
+    margin-left: 160px ;
+    margin-bottom: 100px;
+  }
+
+.title {
+  text-align: center;
+  margin-top: 20px;
+  margin-bottom: 50px;
+  color: black;
+  font-style: italic;
+}
+
+.inlineimage {
+  max-width: 470px;
+  margin-left: 60px;
+}
+.images {
+  display: inline-block;
+  max-width: 98%;
+  height: auto;
+  width: 22%;
+  margin: 1%;
+  left: 20px;
+  text-align: center;
+}
+
+.creditcard{
+    margin-left: 300px;
+}
+
+.confirm{
+    margin-top: 10px;
+    margin-bottom: 100px;
+    text-align: center;
+}

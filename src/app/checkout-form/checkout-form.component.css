@@ -1,0 +1,23 @@
+.mycontainer{
+    background-color:white;
+}
+
+.form{
+    min-height: auto;
+    min-width:auto
+}
+
+.space{
+    margin-left: 300px;
+    margin-right: 300px;
+    margin-bottom: 10px;
+}
+.signin-button{
+    margin-top: 30px;
+    margin-left: 675px;
+    margin-bottom: 100px;
+}
+
+.thankyou{
+    margin-bottom: 200px;
+}

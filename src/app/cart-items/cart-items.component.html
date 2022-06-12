@@ -1,0 +1,141 @@
+
+<div class="myContainer" [hidden] ="submitted">
+    <div class="title">
+        <h1>Your Cart</h1>
+    </div>
+    <div class = "my-container">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-12 col-md-10 col-md-offset-1">
+                    <table class="table table-hover">
+                        <thead>
+                            <tr>
+                                <th>Product</th>
+                                <th>Quantity</th>
+                                <th class="text-center">Price</th>
+                                <th class="text-center">Total</th>
+                                <th> </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr *ngFor="let product of products">
+                                <td class="col-sm-8 col-md-6">
+                                <div class="media">
+                                    <a class="thumbnail pull-left" href="#"> <img class="media-object" src={{product.imgaddress}} style="width: 72px; height: 72px;"> </a>
+                                    <div class="media-body">
+                                        <h4 class="media-heading"><a href="#">{{product.name}}</a></h4>
+                                        <span>Status: </span><span class="text-success"><strong>{{product.status}}</strong></span>
+                                    </div>
+                                </div></td>
+                                <td class="col-sm-1 col-md-1" style="text-align: center">
+                                <input #quantity (keyup)="onKey(product,number(quantity))" type="email" class="form-control" id="exampleInputEmail1" value="1">
+                                </td>
+                                <td class="col-sm-1 col-md-1 text-center"><strong>{{product.price}}</strong></td>
+                                <td class="col-sm-1 col-md-1 text-center" value="product.price"><strong>{{product.price * number(quantity)}}</strong></td>
+                                <td class="col-sm-1 col-md-1">
+                                <button type="button"  (click)="deleteProduct(product)" class="btn btn-danger">
+                                    <span class="glyphicon glyphicon-remove"></span> Remove
+                                </button></td>
+                            </tr>
+                          
+                            <tr>
+                                <td>   </td>
+                                <td>   </td>
+                                <td>   </td>
+                                <td><h5>Subtotal</h5></td>
+                                <td class="text-right"><h5><strong>{{sum}}</strong></h5></td>
+                            </tr>
+                            <tr>
+                                <td>   </td>
+                                <td>   </td>
+                                <td>   </td>
+                                <td><h5>Estimated shipping</h5></td>
+                                <td class="text-right"><h5><strong>{{shippingPrice}}</strong></h5></td>
+                            </tr>
+                            <tr>
+                                <td>   </td>
+                                <td>   </td>
+                                <td>   </td>
+                                <td><h3>Total</h3></td>
+                                <td class="text-right total"><h3><strong>{{totalPrice}}</strong></h3></td>
+                            </tr>
+                            <tr>
+                                <td>   </td>
+                                <td>   </td>
+                                <td>   </td>
+                                <td>
+                                <button type="button" routerLink = "/products" class="btn btn-lg btn-dark">
+                                    <span class="glyphicon glyphicon-shopping-cart"></span> Continue Shopping
+                                </button></td>
+                                <td>
+                                <button (click)='submit()' type="button" class="btn btn-lg btn-dark">
+                                    Checkout <span class="glyphicon glyphicon-play"></span>
+                                </button></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>      
+</div>
+
+
+<div [hidden] = "!submitted">
+    <div class="title">
+        <h1>Credit Card Payment Gateway</h1>
+    </div>
+    <div class="creditcard">
+           
+            <!-- Credit Card Payment Form - START -->
+            <div class="container">
+                <div class="row">
+                    <div class="col-xs-12 col-md-6 col-md-offset-4">
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                                <div class="row">
+                                    <h3 class="text-center">Payment Details</h3>
+                                    <div class="inlineimage"> 
+                                        <img class="img-responsive images" src="https://cdn0.iconfinder.com/data/icons/credit-card-debit-card-payment-PNG/128/Mastercard-Curved.png"> <img class="img-responsive images" src="https://cdn0.iconfinder.com/data/icons/credit-card-debit-card-payment-PNG/128/Discover-Curved.png"> <img class="img-responsive images" src="https://cdn0.iconfinder.com/data/icons/credit-card-debit-card-payment-PNG/128/Paypal-Curved.png"> <img class="img-responsive images" src="https://cdn0.iconfinder.com/data/icons/credit-card-debit-card-payment-PNG/128/American-Express-Curved.png"> 
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="panel-body">
+                                <form role="form">
+                                    <div class="row">
+                                        <div class="col-xs-12">
+                                            <div class="form-group"> <label>CARD NUMBER</label>
+                                                <div class="input-group"> <input type="tel" class="form-control" placeholder="Valid Card Number" /> <span class="input-group-addon"><span class="fa fa-credit-card"></span></span> </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-xs-7 col-md-7">
+                                            <div class="form-group"> <label><span class="hidden-xs">EXPIRATION</span><span class="visible-xs-inline">EXP</span> DATE</label> <input type="tel" class="form-control" placeholder="MM / YY" /> </div>
+                                        </div>
+                                        <div class="col-xs-5 col-md-5 pull-right">
+                                            <div class="form-group"> <label>CV CODE</label> <input type="tel" class="form-control" placeholder="CVC" /> </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-xs-12">
+                                            <div class="form-group"> <label>CARD OWNER</label> <input type="text" class="form-control" placeholder="Card Owner Name" /> </div>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                            <div class="panel-footer">
+                                <div class="row">
+                                    <div class="col-xs-12"> 
+                                        <div class="confirm">
+                                            <button routerLink = "/checkout" class="btn btn-lg btn-dark">Confirm Payment</button> 
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    </div>
+</div>

@@ -1,0 +1,26 @@
+.price-wrapper{
+    position: relative; 
+    display: inline-block;
+    margin-top: 50px;
+    margin-bottom: 10px;
+
+  }
+  
+.price-slash{
+    position: relative;
+    width: 100%;
+    height: 0;
+    border-top: 2.5px solid red;
+    transform: rotate(-4deg);
+    top: 17px;
+  }
+  
+.price{ 
+    font-size: 19px;
+    font-family: Georgia, 'Times New Roman', Times, serif
+}
+
+.price1{
+    margin-top: 110px;
+    font-family: Georgia, 'Times New Roman', Times, serif
+}

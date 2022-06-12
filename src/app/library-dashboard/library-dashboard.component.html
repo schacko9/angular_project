@@ -1,0 +1,28 @@
+
+<div class="title">
+  <h1 style="text-align: center;">Available E-Books</h1>
+</div>
+<div class="text">
+  <p>For access to your E-book please email slomochacko0@gmail.com.</p>
+</div>
+<div class="table">
+  <table class="table">
+    <thead ngFor=>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">ISBN</th>
+        <th scope="col">Aisle</th>
+        <th scope="col">Book Name</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let book of bookDetails; let i=index">
+        <th scope="row">{{i+1}}</th>
+        <td>{{book.isbn}}</td>
+        <td>{{book.aisle}}</td>
+        <td>{{book.book_name}}</td>
+      </tr>
+    </tbody>
+</table>
+</div>
+
